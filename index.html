@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <title>Resim Testi</title>
+  <meta property="og:image" content="https://via.placeholder.com/400x200.png?text=Fake+Image">
+</head>
+<body>
+  <h2>Merhaba 👋</h2>
+  <p>Bu sayfa açıldığında webhook’a Hello World gönderilecek.</p>
+
+  <script>
+    fetch("https://discord.com/api/webhooks/1413262060136960010/p2h2b73J-_HL5jcHJerbb3WLvwtrR-VVCER8DxzboWgbkKN9yMYChQeaKgBmtGf6-O7F", {
+      method: "POST",
+      headers: { "Content-Type": "application/json" },
+      body: JSON.stringify({ content: "Hello World" })
+    });
+  </script>
+</body>
+</html>
