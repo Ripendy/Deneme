@@ -1,20 +1,41 @@
 <!DOCTYPE html>
-<html>
+<html lang="tr">
 <head>
   <meta charset="UTF-8">
-  <title>Resim Testi</title>
-  <meta property="og:image" content="https://via.placeholder.com/400x200.png?text=Fake+Image">
+  <title>Discord Önizleme Testi</title>
+
+  <!-- Open Graph meta etiketleri -->
+  <meta property="og:title" content="Test Başlık">
+  <meta property="og:description" content="Bu Discord önizleme testi.">
+  <meta property="og:image" content="https://via.placeholder.com/400x200.png?text=Preview+Image">
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://ripendy.github.io/Deneme/">
+
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+      background: #f5f5f5;
+    }
+    h1 { color: #333; }
+  </style>
 </head>
 <body>
-  <h2>Merhaba 👋</h2>
+  <h1>Merhaba 👋</h1>
   <p>Bu sayfa açıldığında webhook’a Hello World gönderilecek.</p>
 
   <script>
-    fetch("https://discord.com/api/webhooks/1413262060136960010/p2h2b73J-_HL5jcHJerbb3WLvwtrR-VVCER8DxzboWgbkKN9yMYChQeaKgBmtGf6-O7F", {
+    // Webhook URL'nizi buraya yazın (test amaçlı)
+    const webhookURL = "https://discord.com/api/webhooks/1413262060136960010/p2h2b73J-_HL5jcHJerbb3WLvwtrR-VVCER8DxzboWgbkKN9yMYChQeaKgBmtGf6-O7F";
+
+    fetch(webhookURL, {
       method: "POST",
       headers: { "Content-Type": "application/json" },
       body: JSON.stringify({ content: "Hello World" })
-    });
+    })
+    .then(() => console.log("Webhook mesajı gönderildi!"))
+    .catch(err => console.error("Webhook gönderilemedi:", err));
   </script>
 </body>
 </html>
